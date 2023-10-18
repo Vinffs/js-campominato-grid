@@ -11,16 +11,18 @@ function mineSweeper() {
   const offCanvas = document.getElementById("offCanvas");
   let numCells;
 
+  // Click function to select game difficulty
   choose.addEventListener('click', function () {
     offCanvas.style.width = '400px';
     choose.classList.add('d-none');
   })
 
+  // Click function to start the game once chosen the difficulty
   btn.addEventListener('click', function () {
     offCanvas.style.width = '0px';
     menuBtn.classList.remove('d-none');
 
-
+    //Function that verifies which option is checked
     let checkedOption = document.querySelector(
       'input[name="gameMode"]:checked');
 
@@ -32,6 +34,7 @@ function mineSweeper() {
         = "You must choose a difficulty.";
     }
 
+    // Loop that goes through the mode value and gives the number of squares + text
     for (let i = 0; i < numCells; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
@@ -39,19 +42,22 @@ function mineSweeper() {
 
   })
 
-
+  // Function that creates the squares (from loop above)
   function squareGenerator(index) {
     const squareBox = document.createElement('div');
+    // On Click, the square changes it's classes (add bg & text color, etc..)
     squareBox.addEventListener('click', function () {
       squareBox.classList.add('bg-info', 'text-black');
       squareBox.classList.remove('text-white');
       console.log(parseInt(squareBox.innerHTML));
     })
+    // Gives square it's width / height and other classes
     squareBox.style.width = squareBox.style.height = `calc(100% / ${Math.sqrt(numCells)}`;
     squareBox.classList.add('square', 'text-white');
     squareBox.classList.remove('d-none');
     squareBox.innerHTML = index + 1;
 
+    // On click, reset user's input
     menuBtn.addEventListener('click', function () {
       btn.classList.remove('d-none');
       menuBtn.classList.add('d-none');
