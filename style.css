@@ -1,0 +1,10 @@
+body{
+  background-color: #47ADAE;
+  text-align: center;
+}
+.playground{
+  width: 800px;
+  height: 800px;
+  border: 1px solid #FFFFFF;
+  margin: 50px auto;
+}
