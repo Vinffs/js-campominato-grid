@@ -1,0 +1,28 @@
+body{
+  background-color: #47ADAE;
+}
+#wrapper{
+  text-align: center;
+}
+
+.playground, .square, #gameMenu {
+  border: 1px solid #FFFFFF;
+  display: flex;
+}
+
+.playground{
+  width: 800px;
+  height: 800px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+
+#gameMenu{
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+}
+.square{
+  justify-content: center;
+  align-items: center;
+}
