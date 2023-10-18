@@ -1,10 +1,22 @@
 body{
   background-color: #47ADAE;
+}
+#wrapper{
   text-align: center;
 }
+
+.playground, .square {
+  border: 1px solid #FFFFFF;
+  display: flex;
+}
+
 .playground{
   width: 800px;
   height: 800px;
-  border: 1px solid #FFFFFF;
   margin: 50px auto;
+  flex-wrap: wrap;
+}
+.square{
+  justify-content: center;
+  align-items: center;
 }
