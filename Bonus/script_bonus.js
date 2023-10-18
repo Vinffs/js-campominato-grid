@@ -1,19 +1,27 @@
 mineSweeper();
 function mineSweeper() {
-  const btn = document.querySelector('.btn');
-  const menuBtn = document.querySelector('.backMenu');
+  const btn = document.getElementById('startGame');
+  const choose = document.getElementById('chooseDif');
+  const menuBtn = document.getElementById('backMenu');
   const playground = document.querySelector('.playground');
+  const offCanvas = document.getElementById("offCanvas");
   const numCells = 100;
 
+  choose.addEventListener('click', function () {
+    offCanvas.style.width = '400px';
+    choose.classList.add('d-none');
+  })
+
   btn.addEventListener('click', function () {
-    btn.classList.add('d-none');
+    offCanvas.style.width = '0px';
     menuBtn.classList.remove('d-none');
+
+
 
     for (let i = 1; i < numCells + 1; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
     }
-
 
   })
 
@@ -33,6 +41,7 @@ function mineSweeper() {
       btn.classList.remove('d-none');
       menuBtn.classList.add('d-none');
       squareBox.classList.add('d-none');
+      offCanvas.style.width = '400px';
     })
 
     return squareBox;
