@@ -9,7 +9,8 @@ function mineSweeper() {
   // containers
   const playground = document.querySelector('.playground');
   const offCanvas = document.getElementById("offCanvas");
-  let numCells;
+  const alert = document.querySelector('.alert');
+  let numCells, checkedOption;
 
   // Click function to select game difficulty
   choose.addEventListener('click', function () {
@@ -21,17 +22,20 @@ function mineSweeper() {
   btn.addEventListener('click', function () {
     offCanvas.style.width = '0px';
     menuBtn.classList.remove('d-none');
+    alert.innerHTML = '';
 
     //Function that verifies which option is checked
-    let checkedOption = document.querySelector(
-      'input[name="gameMode"]:checked');
+    checkedOption = document.querySelector(
+      'input[type=radio]:checked');
 
     if (checkedOption !== null) {
       numCells = checkedOption.value;
     }
     else {
-      document.querySelector('.alert').innerHTML
-        = "You must choose a difficulty.";
+      alert.innerHTML = `You must choose a difficulty.`;
+      offCanvas.style.width = '400px';
+      menuBtn.classList.add('d-none');
+
     }
 
     // Loop that goes through the mode value and gives the number of squares + text
@@ -63,6 +67,7 @@ function mineSweeper() {
       menuBtn.classList.add('d-none');
       squareBox.classList.add('d-none');
       offCanvas.style.width = '400px';
+      checkedOption.checked = false;
     })
 
     return squareBox;
