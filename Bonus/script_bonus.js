@@ -1,10 +1,20 @@
 mineSweeper();
 function mineSweeper() {
+
+  //buttons
   const btn = document.getElementById('startGame');
   const choose = document.getElementById('chooseDif');
   const menuBtn = document.getElementById('backMenu');
+
+  // containers
   const playground = document.querySelector('.playground');
   const offCanvas = document.getElementById("offCanvas");
+
+  //difficulties
+  const easy = document.getElementById('easyMode');
+  const medium = document.getElementById('mediumMode');
+  const hard = document.getElementById('hardMode');
+
   const numCells = 100;
 
   choose.addEventListener('click', function () {
@@ -17,8 +27,7 @@ function mineSweeper() {
     menuBtn.classList.remove('d-none');
 
 
-
-    for (let i = 1; i < numCells + 1; i++) {
+    for (let i = 0; i < numCells; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
     }
@@ -35,7 +44,7 @@ function mineSweeper() {
     squareBox.style.width = squareBox.style.height = `calc(100% / ${Math.sqrt(numCells)}`;
     squareBox.classList.add('square', 'text-white');
     squareBox.classList.remove('d-none');
-    squareBox.innerHTML = index;
+    squareBox.innerHTML = index + 1;
 
     menuBtn.addEventListener('click', function () {
       btn.classList.remove('d-none');
@@ -46,5 +55,10 @@ function mineSweeper() {
 
     return squareBox;
   }
+
+  // function ifChecked() {
+  //   let check = false;
+  //   if (!easy.checked)
+  // }
 
 }
