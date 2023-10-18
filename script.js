@@ -13,11 +13,16 @@ function mineSweeper() {
 
   function squareGenerator(index) {
     const squareBox = document.createElement('div');
+    squareBox.addEventListener('click', function () {
+      squareBox.classList.add('bg-info', 'text-black');
+      squareBox.classList.remove('text-white');
+    })
     squareBox.style.width = squareBox.style.height = `calc(100% / ${Math.sqrt(numCells)}`;
     squareBox.classList.add('square', 'text-white');
     squareBox.innerHTML = index;
 
     return squareBox;
+
   }
 
 
