@@ -45,7 +45,7 @@ function mineSweeper() {
     squareBox.addEventListener('click', function () {
       squareBox.classList.add('bg-info', 'text-black');
       squareBox.classList.remove('text-white');
-      console.log(squareBox.innerHTML);
+      console.log(parseInt(squareBox.innerHTML));
     })
     squareBox.style.width = squareBox.style.height = `calc(100% / ${Math.sqrt(numCells)}`;
     squareBox.classList.add('square', 'text-white');
