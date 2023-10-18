@@ -9,13 +9,7 @@ function mineSweeper() {
   // containers
   const playground = document.querySelector('.playground');
   const offCanvas = document.getElementById("offCanvas");
-
-  //difficulties
-  const easy = document.getElementById('easyMode');
-  const medium = document.getElementById('mediumMode');
-  const hard = document.getElementById('hardMode');
-
-  const numCells = 100;
+  let numCells;
 
   choose.addEventListener('click', function () {
     offCanvas.style.width = '400px';
@@ -27,12 +21,24 @@ function mineSweeper() {
     menuBtn.classList.remove('d-none');
 
 
+    let checkedOption = document.querySelector(
+      'input[name="gameMode"]:checked');
+
+    if (checkedOption !== null) {
+      numCells = checkedOption.value;
+    }
+    else {
+      document.querySelector('.alert').innerHTML
+        = "You must choose a difficulty.";
+    }
+
     for (let i = 0; i < numCells; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
     }
 
   })
+
 
   function squareGenerator(index) {
     const squareBox = document.createElement('div');
@@ -55,10 +61,5 @@ function mineSweeper() {
 
     return squareBox;
   }
-
-  // function ifChecked() {
-  //   let check = false;
-  //   if (!easy.checked)
-  // }
 
 }
