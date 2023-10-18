@@ -5,7 +5,7 @@ body{
   text-align: center;
 }
 
-.playground, .square, #gameMenu {
+.playground, .square{
   border: 1px solid #FFFFFF;
   display: flex;
 }
@@ -33,4 +33,9 @@ body{
   overflow-x: hidden;
   padding-top: 50px;
   transition: all 0.5s;
+}
+
+#startGame{
+  background-color: #47ADAE;
+  color: #FFFFFF;
 }
