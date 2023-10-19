@@ -36,7 +36,7 @@ body{
   background-color: #FFFFFF;
   overflow-x: hidden;
   padding-top: 50px;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 #startGame{

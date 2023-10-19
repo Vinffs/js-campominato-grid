@@ -10,11 +10,22 @@ function mineSweeper() {
   const playground = document.querySelector('.playground');
   const offCanvas = document.getElementById("offCanvas");
   const alert = document.querySelector('.alert');
+
+  // variables
   let numCells, checkedOption;
+
+  // probability array where num*100;
+  const probability = [0.2, 0.5, 0.75];
+
+  // assigning probabilities to each game Mode
+  // const easy = document.getElementById('easyMode') = 0.2;
+  // const medium = document.getElementById('mediumMode') = 0.5;
+  // const hard = document.getElementById('hardMode') = 0.75;
+
+  console.log(easy, medium, hard);
 
   // Click function to select game difficulty
   choose.addEventListener('click', function () {
-    offCanvas.classList.remove('d-none');
     offCanvas.style.width = '400px';
     choose.classList.add('d-none');
   })
@@ -22,7 +33,6 @@ function mineSweeper() {
   // Click function to start the game once chosen the difficulty
   btn.addEventListener('click', function () {
     offCanvas.style.width = '0px';
-    offCanvas.classList.add('d-none');
     menuBtn.classList.remove('d-none');
     alert.innerHTML = '';
 
@@ -37,7 +47,6 @@ function mineSweeper() {
       alert.innerHTML = `You must choose a difficulty.`;
       offCanvas.style.width = '400px';
       menuBtn.classList.add('d-none');
-
     }
 
     // Loop that goes through the mode value and gives the number of squares + text
@@ -69,13 +78,11 @@ function mineSweeper() {
       menuBtn.classList.add('d-none');
       squareBox.classList.add('d-none');
       offCanvas.style.width = '400px';
-      offCanvas.classList.remove('d-none');
       checkedOption.checked = false;
     })
 
     return squareBox;
   }
-
   /* devo creare un array con dentro probabilità (3), che saranno poi da applicare come rapporto al numero di campi
   una volta definita la quantità di mine per Game Mode, devo fare in modo di generare dei valori randomici per quelle caselle
   applicare poi un altro sfondo a quelle caselle */
