@@ -14,6 +14,7 @@ function mineSweeper() {
 
   // Click function to select game difficulty
   choose.addEventListener('click', function () {
+    offCanvas.classList.remove('d-none');
     offCanvas.style.width = '400px';
     choose.classList.add('d-none');
   })
@@ -21,6 +22,7 @@ function mineSweeper() {
   // Click function to start the game once chosen the difficulty
   btn.addEventListener('click', function () {
     offCanvas.style.width = '0px';
+    offCanvas.classList.add('d-none');
     menuBtn.classList.remove('d-none');
     alert.innerHTML = '';
 
@@ -67,10 +69,15 @@ function mineSweeper() {
       menuBtn.classList.add('d-none');
       squareBox.classList.add('d-none');
       offCanvas.style.width = '400px';
+      offCanvas.classList.remove('d-none');
       checkedOption.checked = false;
     })
 
     return squareBox;
   }
+
+  /* devo creare un array con dentro probabilità (3), che saranno poi da applicare come rapporto al numero di campi
+  una volta definita la quantità di mine per Game Mode, devo fare in modo di generare dei valori randomici per quelle caselle
+  applicare poi un altro sfondo a quelle caselle */
 
 }
