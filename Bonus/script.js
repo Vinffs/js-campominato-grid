@@ -15,14 +15,14 @@ function mineSweeper() {
   let numCells, checkedOption;
 
   // probability array where num*100;
-  const probability = [0.2, 0.5, 0.75];
+  // const probability = [0.2, 0.5, 0.75];
 
   // assigning probabilities to each game Mode
   // const easy = document.getElementById('easyMode') = 0.2;
   // const medium = document.getElementById('mediumMode') = 0.5;
   // const hard = document.getElementById('hardMode') = 0.75;
 
-  console.log(easy, medium, hard);
+  // console.log(easy, medium, hard);
 
   // Click function to select game difficulty
   choose.addEventListener('click', function () {
