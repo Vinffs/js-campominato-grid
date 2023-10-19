@@ -50,7 +50,7 @@ function mineSweeper() {
     }
 
     // Loop that goes through the mode value and gives the number of squares + text
-    for (let i = 0; i < numCells; i++) {
+    for (let i = 0; i <= numCells - 1; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
     }

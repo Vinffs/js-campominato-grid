@@ -9,7 +9,7 @@ function mineSweeper() {
     btn.classList.add('d-none');
     menuBtn.classList.remove('d-none');
 
-    for (let i = 1; i < numCells + 1; i++) {
+    for (let i = 1; i <= numCells; i++) {
       let squareNum = squareGenerator(i);
       playground.append(squareNum);
     }
